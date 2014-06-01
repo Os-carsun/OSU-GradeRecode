@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/semantic.min.css">
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./javascript/semantic.min.js"></script>
+  <script type="text/javascript" src="./javascript/xmlResquet.js"></script>
+  <script >
+    window.onload = function() {
+        var anchors = document.getElementsByClassName('ui blue submit button');
+        for(var i = 0; i < anchors.length; i++) {
+            var anchor = anchors[i];
+            anchor.onclick = function() {
+                var inputs = document.getElementsByTagName('input');
+                for(var k = 0; k < inputs.length; k++) {
+                  var input = inputs[k];
+                  if(input.value===""){
+                    alert("input need compeleted!!");
+                    return;
+                  }
+                  console.log(input.value);
+                }
+                loadXMLDoc("sample.php",inputs[0].value,inputs[1].value);
+            }
+        }
+    }
+  </script>
+</head>
+<body>
+<div class="ui form segment">
+  <div class="field">
+    <label>Username</label>
+    <div class="ui left labeled icon input">
+      <input type="text" placeholder="Username">
+      <i class="user icon"></i>
+      <div class="ui corner label">
+        <i class="icon asterisk"></i>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <div class="ui left labeled icon input">
+      <input type="password">
+      <i class="lock icon"></i>
+      <div class="ui corner label">
+        <i class="icon asterisk"></i>
+      </div>
+    </div>
+  </div>
+  <div class="ui error message">
+    <div class="header">We noticed some issues</div>
+  </div>
+  <div class="ui blue submit button">Login</div>
+</div>
+</body>
+</html>
