@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-// header('Content-Type: application/json');
+header('Content-Type: application/json');
 if(isset($_POST['login'])){
   session_id($_POST['login']);
 }

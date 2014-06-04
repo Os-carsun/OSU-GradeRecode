@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(isset($_SESSION['login_tag'])){
+}else{
+  die("{none:'none'}");
+}
+
+
 
 echo "{";
 if ($_FILES["file"]["error"] > 0) {
